@@ -27,11 +27,16 @@ export default {
     getMovies() {
       const movieOptions = {
         method: 'GET',
-        url: "https://api.themoviedb.org/3/search/movie?api_key=2c8fb11c079446c9942c260e3ac58689&query=",
-        params: { query: `${this.store.getInput}`, include_adult: 'false', language: 'en-US', page: '1' },
+        url: "https://api.themoviedb.org/3/search/movie",
+        params: {
+          query: `${this.store.getInput}`,
+          include_adult: 'false',
+          language: 'en-US',
+          page: '1',
+          api_key: '2c8fb11c079446c9942c260e3ac58689'
+        },
         headers: {
           accept: 'application/json',
-          authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYzhmYjExYzA3OTQ0NmM5OTQyYzI2MGUzYWM1ODY4OSIsInN1YiI6IjY1NmRjMDgzNTFmOTlhMDBlMzQ2MTZlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z1IXoUYx9rCmya2KI-KQr7RYhmTe_z1aiphW4IuA7vM'
         },
       };
 
@@ -48,11 +53,16 @@ export default {
 
       const seriesOptions = {
         method: 'GET',
-        url: "https://api.themoviedb.org/3/search/tv?api_key=2c8fb11c079446c9942c260e3ac58689&query=",
-        params: { query: `${this.store.getInput}`, include_adult: 'false', language: 'en-US', page: '1' },
+        url: "https://api.themoviedb.org/3/search/tv",
+        params: {
+          query: `${this.store.getInput}`,
+          include_adult: 'false',
+          language: 'en-US',
+          page: '1',
+          api_key: '2c8fb11c079446c9942c260e3ac58689'
+        },
         headers: {
           accept: 'application/json',
-          authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYzhmYjExYzA3OTQ0NmM5OTQyYzI2MGUzYWM1ODY4OSIsInN1YiI6IjY1NmRjMDgzNTFmOTlhMDBlMzQ2MTZlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.z1IXoUYx9rCmya2KI-KQr7RYhmTe_z1aiphW4IuA7vM'
         },
       };
 
