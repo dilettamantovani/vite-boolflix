@@ -3,6 +3,7 @@ import { store } from '../store.js'
 
 export default {
     name: 'SearchMovie',
+    emits: ["search"],
     data() {
         return {
             store
