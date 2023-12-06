@@ -111,7 +111,6 @@ main {
   flex-wrap: nowrap;
   width: 85%;
   margin: 0 auto;
-  justify-content: space-evenly;
   overflow-x: auto;
   /* for FF */
   scrollbar-width: none;
