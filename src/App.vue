@@ -89,11 +89,11 @@ export default {
     <h1>Boolflix</h1>
 
     <SearchMovie @search="getMovies" />
-    <h2>Movies</h2>
+    <!-- <h2>Movies</h2> -->
     <section class="wrapper" id="moviesContainer">
       <MovieCard v-for="movie in store.movies" :movie="movie" />
     </section>
-    <h2>Series</h2>
+    <!-- <h2>Series</h2> -->
     <section class="wrapper" id="seriesContainer">
       <SeriesCard v-for="series in store.series" :series="series" />
     </section>
