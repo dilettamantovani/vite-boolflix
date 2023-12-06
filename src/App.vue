@@ -85,25 +85,52 @@ export default {
 </script>
 
 <template>
-  <main>
-    <h1>Boolflix</h1>
-
+  <header>
     <SearchMovie @search="getMovies" />
-    <h2>Movies</h2>
-    <section class="wrapper" id="moviesContainer">
-      <MovieCard v-for="movie in store.movies" :movie="movie" />
+  </header>
+
+  <main>
+    <section>
+      <h2>Movies</h2>
+      <div class="wrapper" id="moviesContainer">
+        <MovieCard v-for="movie in store.movies" :movie="movie" />
+      </div>
     </section>
-    <h2>Series</h2>
-    <section class="wrapper" id="seriesContainer">
-      <SeriesCard v-for="series in store.series" :series="series" />
+    <section>
+      <h2>Series</h2>
+      <div class="wrapper" id="seriesContainer">
+        <SeriesCard v-for="series in store.series" :series="series" />
+      </div>
     </section>
   </main>
 </template>
 
 <style scoped>
+header {
+  width: 100%;
+  height: 3.5rem;
+  background-color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 1rem;
+}
+
 main {
   width: 95%;
   margin: 0 auto;
+  overflow-y: auto;
+  padding: 3.5rem 1rem 1rem 1rem;
+  /* for FF */
+  scrollbar-width: none;
+  /* for IE, E */
+  -ms-overflow-style: none;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 .wrapper {

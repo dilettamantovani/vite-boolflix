@@ -18,10 +18,14 @@ export default {
 </script>
 
 <template>
-    <div>
-        <input type="text" placeholder="Search..." v-model="store.getInput" @keyup="searchMovie">
-    </div>
-    <!-- language? -->
+    <h1>Boolflix</h1>
+    <input type="text" placeholder="Search..." v-model="store.getInput" @keyup="searchMovie">
 </template>
 
-<style scoped></style>
+<style scoped>
+h1 {
+    color: red;
+    font-weight: 700;
+    font-size: 2rem;
+}
+</style>
