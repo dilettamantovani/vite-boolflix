@@ -88,3 +88,7 @@ h6 {
 .card:hover .card-inner {
     transform: rotateY(180deg);
 }
+
+.stars {
+    margin-top: 0.3rem;
+}
