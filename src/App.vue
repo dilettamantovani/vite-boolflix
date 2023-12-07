@@ -35,9 +35,6 @@ export default {
           page: '1',
           api_key: '2c8fb11c079446c9942c260e3ac58689'
         },
-        headers: {
-          accept: 'application/json',
-        },
       };
 
       axios
@@ -60,9 +57,6 @@ export default {
           language: 'en-US',
           page: '1',
           api_key: '2c8fb11c079446c9942c260e3ac58689'
-        },
-        headers: {
-          accept: 'application/json',
         },
       };
 
@@ -105,6 +99,7 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
+  z-index: 999;
   padding: 2.2rem 1.8rem;
 }
 
