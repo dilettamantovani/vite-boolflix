@@ -1,8 +1,16 @@
 <script>
+import { store } from '../store.js';
+
 export default {
     name: 'SeriesCard',
+    data() {
+        return {
+            store,
+        }
+    },
+
     props: {
-        series: Object
+        movie: Object
     },
 
     methods: {
@@ -14,30 +22,36 @@ export default {
             return Math.ceil(vote / 2)
         },
     },
-
 }
 </script>
 
 <template>
-    <div class="card" id="seriesCard">
-        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
-        <h3>{{ series.name }}</h3>
-        <h6><em>(Original Title: {{ series.original_name }})</em></h6>
-        <p><em>(Original Language: <img class="flag" :src="getFlag(series.original_language)" alt="">)</em></p>
-        <i v-for="i in 5" :class="{ 'filling': i <= getVote(series.vote_average) }" class="fa-solid fa-star"></i>
-    </div>
+    <main>
+        <section v-if="store.series.length > 0">
+            <h2>Series</h2>
+        </section>
+
+        <section class="wrapper">
+            <div class="card" v-for="series in store.series">
+                <div class="card-front">
+                    <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
+                </div>
+
+                <div class="card-back">
+                    <h3>{{ series.name }}</h3>
+                    <h6><em>(Original Title: {{ series.original_name }})</em></h6>
+                    <p><em>(Original Language: <img class="flag" :src="getFlag(series.original_language)" alt="">)</em></p>
+                    <i v-for="i in 5" :class="{ 'filling': i <= getVote(series.vote_average) }"
+                        class="fa-solid fa-star"></i>
+                </div>
+            </div>
+        </section>
+    </main>
 </template>
 
+
+
 <style scoped>
-#seriesCard {
-    background-color: blueviolet;
-}
-
-.poster {
-    width: 13.7rem;
-    padding: 0.5rem;
-}
-
 .flag {
     width: 1.5rem;
 }

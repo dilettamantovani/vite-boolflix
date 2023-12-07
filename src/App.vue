@@ -90,18 +90,8 @@ export default {
   </header>
 
   <main>
-    <section>
-      <h2>Movies</h2>
-      <div class="wrapper" id="moviesContainer">
-        <MovieCard v-for="movie in store.movies" :movie="movie" />
-      </div>
-    </section>
-    <section>
-      <h2>Series</h2>
-      <div class="wrapper" id="seriesContainer">
-        <SeriesCard v-for="series in store.series" :series="series" />
-      </div>
-    </section>
+    <MovieCard />
+    <SeriesCard />
   </main>
 </template>
 
@@ -115,14 +105,14 @@ header {
   align-items: center;
   position: fixed;
   top: 0;
-  padding: 1rem;
+  padding: 2.2rem 1.8rem;
 }
 
 main {
   width: 95%;
   margin: 0 auto;
   overflow-y: auto;
-  padding: 3.5rem 1rem 1rem 1rem;
+  padding: 2.5rem 1rem 1rem 1rem;
   /* for FF */
   scrollbar-width: none;
   /* for IE, E */
@@ -130,23 +120,6 @@ main {
 }
 
 main::-webkit-scrollbar {
-  display: none;
-}
-
-.wrapper {
-  display: flex;
-  flex-wrap: nowrap;
-  width: 85%;
-  margin: 0 auto;
-  overflow-x: auto;
-  /* for FF */
-  scrollbar-width: none;
-  /* for IE, E */
-  -ms-overflow-style: none;
-}
-
-/* for GC, Safari, Opera */
-.wrapper::-webkit-scrollbar {
   display: none;
 }
 </style>
