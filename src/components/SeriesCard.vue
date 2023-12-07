@@ -33,16 +33,22 @@ export default {
 
         <section class="wrapper">
             <div class="card" v-for="series in store.series">
-                <div class="card-front">
-                    <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
-                </div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
+                    </div>
 
-                <div class="card-back">
-                    <h3>{{ series.name }}</h3>
-                    <h6><em>(Original Title: {{ series.original_name }})</em></h6>
-                    <p><em>(Original Language: <img class="flag" :src="getFlag(series.original_language)" alt="">)</em></p>
-                    <i v-for="i in 5" :class="{ 'filling': i <= getVote(series.vote_average) }"
-                        class="fa-solid fa-star"></i>
+                    <div class="card-back">
+                        <h3>{{ series.name }}</h3>
+                        <h6><em>(Original Title: {{ series.original_name }})</em></h6>
+                        <p><em>(Original Language: <img class="flag" :src="getFlag(series.original_language)" alt="">)</em>
+                        </p>
+                        <div class="stars">
+                            <i v-for="i in 5" :class="{ 'filling': i <= getVote(series.vote_average) }"
+                                class="fa-solid fa-star"></i>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </section>
