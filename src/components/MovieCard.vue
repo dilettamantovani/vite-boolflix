@@ -35,8 +35,8 @@ export default {
             <div class="card" v-for="movie in store.movies">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
-                        <!-- inserisci v-if/else per poster: null -->
+                        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${movie.poster_path}`"
+                            onerror="this.src='https://placehold.co/600x800?text=Image+Not+Found'" alt="">
                     </div>
 
                     <div class="card-back">

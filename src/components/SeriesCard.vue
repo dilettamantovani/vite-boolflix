@@ -35,7 +35,9 @@ export default {
             <div class="card" v-for="series in store.series">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
+                        <img class="poster" :src="`https://image.tmdb.org/t/p/w342/${series.poster_path}`"
+                            onerror="this.src='https://placehold.co/600x800?text=Image+Not+Found'" alt="">
+
                     </div>
 
                     <div class="card-back">
